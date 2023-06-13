@@ -41,7 +41,7 @@ export default function Carousel(){
 
     return(
         <div className="hidden lg:inline-flex lg:mt-[19%] h-[380px] bg-white w-full items-center justify-center">
-        <div className="bg-gradient-to-r from-indigo-700 to-indigo-500 flex w-[90%] h-[265px] items-center justify-between rounded-md">
+        <div className="flex w-[90%] h-[265px] items-center justify-between rounded-md" style={{backgroundColor: categories[counter]?.color}}>
           <img src={left} className="ps-3 cursor-pointer" alt="Previous" onClick={prev}/>
           <div className="flex mb-12 mr-8">
             <img
@@ -53,8 +53,8 @@ export default function Carousel(){
           </div>
 
           <div className="text-white w-[25%] h-[93px] flex flex-col justify-center">
-            <h1 className="font-bold text-2xl font-roboto">{categories[counter]?.name}</h1>
-            <p className="font-roboto text-sm color-black ">
+            <h1 className="font-bold text-2xl font-roboto" style={{ color: categories[counter]?.hover }}>{categories[counter]?.name.toUpperCase()}</h1>
+            <p className="font-roboto text-sm color-black" style={{ color: categories[counter]?.hover }}>
               {categories[counter]?.description}
             </p>
           </div>
